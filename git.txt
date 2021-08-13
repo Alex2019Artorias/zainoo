@@ -1,1 +1,3 @@
-git add
+git add . (добавить в коммит)
+git commit -m "message" (сохранит изменения)
+git push (отправить)

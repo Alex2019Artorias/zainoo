@@ -1,0 +1,384 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+    position: relative;
+}
+
+body {
+    font-family: "Sofia Pro";
+}
+
+/* background lines */
+
+.lines {
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.lines .line {
+    border-right: 1px solid #E9E9E9;
+    width: 21%;
+    font-size: 30em;
+    color: #FBF4E5;
+    margin-top: -100px;
+}
+
+/* .line p {
+    position: absolute;
+    top: -630px;
+    left: 0; 
+}
+
+.last-line p {
+    border: none;
+    left: 808px;
+} */
+
+.logo {
+    display: flex;
+    font-family: 'Circular Std';
+}
+
+.site-name {
+    font-size: 32px;
+    font-weight: 700;
+    /* font-family: 'Circular Std'; */
+    margin: 0;
+}
+
+.trademark {
+    /* font-family: 'Circular Std'; */
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.row, .icons {
+    display: flex;
+}
+
+.icons a {
+    color: #000;
+}
+
+.icon {
+    margin: 0 10px;
+}
+
+.icon:last-child {
+    margin-right: 0;
+}
+
+.row {
+    justify-content: space-between;
+}
+
+.icons {
+    justify-content: space-around;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.products {
+    list-style-type: none;
+    margin: 45px 0;
+    padding: 0;
+    font-family: 'Sofia Pro ExtraLight';
+    font-weight: 400;
+    font-size: 22px;
+}
+
+.types-of-products .products:nth-child(3) {
+    display: flex;
+    align-items: center;
+}
+
+.new {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 12px;
+    padding: 3px 5px;
+    margin-left: 10px;
+    margin-bottom: -3px;
+}
+
+.types {
+    color: grey;
+    text-decoration: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.something {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.sofiapro {
+    font-weight: 400;
+    font-family: 'Sofia Pro';
+    font-size: 44px;
+    margin: 0;
+}
+
+.extra-care {
+    background-color: black;
+    color: white;
+}
+
+.learn-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.learn-more .line {
+    border-bottom: 1px solid #000;
+    height: 1px;
+    width: 60px;
+}
+
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.ad {
+    width: 50%;
+    /* margin-bottom: 100px; */
+    position: absolute;
+    top: 0;
+    z-index: 2;
+}
+
+.ad-text {
+    margin-bottom: 5%;
+}
+
+.ad p {
+    color: grey;
+    margin: 2% 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.registered {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.ad-text p {
+    font-family: 'Sofia Pro Light';
+}
+
+.comfy-maxer {
+    font-family: 'Sofia Pro Ultralight';
+    font-weight: 300;
+    font-size: 3em;
+    /* line-height: 32.1px; */
+}
+
+.button {
+    padding: 20px 30px;
+    border-radius: 7px;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #000;
+}
+
+.cart-link {
+    background-color: black;
+    color: white;
+}
+
+.intro-link {
+    background-color: #fff;
+    color: black;
+}
+
+.button i {
+    margin-right: 8px;
+}
+
+.cartlink {
+    margin-right: 8px;
+}
+
+.ad-links {
+    display: flex;
+}
+
+.sneakers-img {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.slides p{
+    text-align: center;
+}
+
+.vertical {
+    writing-mode: vertical-lr;
+    display: flex;
+    justify-content: space-between;
+    font-family: "Circular Std";
+    font-size: 14px;
+}
+
+.vertical-menu li {
+    margin: 10px 0;
+}
+
+.vertical-menu {
+    margin: 0;
+    list-style-type: none;
+    display: flex;
+    transform: rotate(180deg);
+    align-items: flex-end;
+}
+
+@media screen and (max-width: 1024px) {
+    .comfy-maxer {
+        font-size: 3em;
+    }
+
+    .ad {
+        width: 80%;
+    }
+
+    .lines .line {
+        font-size: 22em;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .lines, .scroll-down {
+        display: none;
+    }
+
+    .learn-more {
+        flex-direction: column;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    .learn-more .line {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+
+    .logo {
+        justify-content: center;
+        margin-bottom: 25px;
+    }
+
+    .types-of-products ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .something {
+        justify-content: center;
+    }
+
+    .ad {
+        position: static;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .ad-links {
+        justify-content: center;
+    }
+
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .extra-care, .foot-tech {
+        width: 30%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sneakers {
+        position: static;
+    }
+
+    .vertical {
+        writing-mode: horizontal-tb;     ;
+    }
+
+    .vertical-menu {
+        transform: rotate(0deg); 
+    }
+
+    .vertical-menu li {
+        margin: 0 10px;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .types-of-products ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .products {
+        margin: 15px 0;
+        font-size: 1.3em;
+    }
+    
+    .ad-links {
+        flex-direction: column;
+    }
+
+    .vertical-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .vertical-menu li {
+        margin: 10px 0;
+    }
+
+    .cartlink {
+        margin-right: 0px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .extra-care, .foot-tech {
+        width: 50%;
+    }
+}

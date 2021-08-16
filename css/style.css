@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 .wrapper {
     max-width: 1200px;
     margin: 0 auto;
@@ -152,6 +156,11 @@ ul {
     width: 60px;
 }
 
+.scroll-down a {
+    text-decoration: none;
+    color: #000;
+}
+
 .main {
     position: relative;
     display: flex;
@@ -258,6 +267,10 @@ h1 {
     display: flex;
     transform: rotate(180deg);
     align-items: flex-end;
+}
+
+.mainagain {
+    height: 1500px;
 }
 
 @media screen and (max-width: 1024px) {

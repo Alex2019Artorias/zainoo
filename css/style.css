@@ -62,6 +62,11 @@ body {
     display: flex;
 }
 
+.icons {
+    /* width: 40%; */
+    justify-content: space-between;
+}
+
 .icons a {
     color: #000;
 }
@@ -72,6 +77,14 @@ body {
 
 .icon:last-child {
     margin-right: 0;
+}
+
+.input-box {
+    display: none;
+}
+
+.input-search {
+    width: 100%;
 }
 
 .row {

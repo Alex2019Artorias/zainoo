@@ -85,6 +85,12 @@ body {
 
 .input-search {
     width: 100%;
+    border: none;
+    background-color: gainsboro;
+    height: 25px;
+    border-radius: 60px;
+    margin-top: -10px;
+    outline: none;
 }
 
 .row {

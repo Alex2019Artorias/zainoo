@@ -6,10 +6,14 @@
   "author": "DL <damir96.lukyanenko@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev": "parcel index.html"
+    "dev": "parcel src/index.html"
   },
   "dependencies": {
     "jquery": "^3.6.0",
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "parcel-cli": "^1.1.0"
+  },
+  "devDependencies": {
+    "sass": "^1.38.1"
   }
 }

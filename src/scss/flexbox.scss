@@ -1,0 +1,31 @@
+.lines, .logo, .row, .icons, .menu, .types-of-products .products:nth-child(3), .something, .learn-more, .main, .button, .info-links, .vertical, .vertical-menu {
+    display: flex;
+}
+
+.row, .icons, .menu, .learn-more, .vertical {
+    justify-content: space-between;
+}
+
+.icons {
+    justify-content: space-around;
+}
+
+.button {
+    justify-content: center;
+}
+
+.main {
+    justify-content: flex-end;
+}
+
+.menu, .main {
+    flex-direction: column;
+}
+
+.types-of-products .products:nth-child(3), .learn-more, .button {
+    align-items: center;
+}
+
+.vertical-menu {
+    align-items: flex-end;
+}

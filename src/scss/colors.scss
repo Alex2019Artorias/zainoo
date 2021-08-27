@@ -1,7 +1,31 @@
-// .vertical-menu, p {
-//     color: $white;
-// }
+.new, .extra-care, .cart-link {
+    color: $white;
+}
 
-// body, .vertical-menu {
-//     background-color: $black;
-// }
+.scroll-down a, .intro-link, .icons a {
+    color: $black;
+}
+
+.types, .info p {
+    color: grey;
+}
+
+.lines .line {
+    color: #FBF4E5;
+}
+
+.intro-link {
+    background-color: $white;
+}
+
+.extra-care, .cart-link {
+    background-color: $black;
+}
+
+.input-search {
+    background-color: gainsboro;
+}
+
+.new {
+    background-color: rgba(0, 0, 0, 0.2);
+}

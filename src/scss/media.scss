@@ -13,6 +13,18 @@
 }
 
 @media screen and (max-width: 768px) {
+   .icon i {
+       font-size: 30px;
+    } 
+
+    .icon {
+        margin: 0;
+    }
+
+    .logo {
+        margin-left: 19px;
+    }
+
     .lines, .scroll-down {
         display: none;
     }
@@ -73,7 +85,7 @@
     }
 
     .vertical {
-        writing-mode: horizontal-tb;     ;
+        writing-mode: horizontal-tb;
     }
 
     .vertical-menu {
@@ -82,6 +94,10 @@
 
     .vertical-menu li {
         margin: 0 10px;
+    }
+
+    .products {
+        margin: 40px 0;
     }
 }
 
@@ -104,6 +120,7 @@
     .vertical-menu {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
     }
 
     .vertical-menu li {

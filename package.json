@@ -10,10 +10,10 @@
   },
   "dependencies": {
     "jquery": "^3.6.0",
-    "parcel-bundler": "^1.12.5",
-    "parcel-cli": "^1.1.0"
+    "parcel": "^2.4.1"
   },
   "devDependencies": {
+    "@parcel/transformer-sass": "2.4.1",
     "sass": "^1.38.1"
   }
 }

@@ -1,9 +1,11 @@
+@use "variables";
+
 .new, .extra-care, .cart-link {
-    color: $white;
+    color: variables.$white;
 }
 
 .scroll-down a, .intro-link, .icons a {
-    color: $black;
+    color: variables.$black;
 }
 
 .types, .info p {
@@ -15,11 +17,11 @@
 }
 
 .intro-link {
-    background-color: $white;
+    background-color: variables.$white;
 }
 
 .extra-care, .cart-link {
-    background-color: $black;
+    background-color: variables.$black;
 }
 
 .input-search {

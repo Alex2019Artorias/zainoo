@@ -1,3 +1,5 @@
+@use "variables";
+
 .lines .line {
     border-right: 1px solid #E9E9E9;
 }
@@ -13,10 +15,10 @@
 }
 
 .learn-more .line {
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid variables.$black;
 }
 
 .button {
     border-radius: 7px;
-    border: 1px solid $black;
+    border: 1px solid variables.$black;
 }

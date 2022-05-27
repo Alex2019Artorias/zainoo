@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="fonts/Circular/circular-std.css">
     <link rel="stylesheet" href="fonts/Sofia-Pro/sofia-pro.css">
-    <link rel="stylesheet" href="./scss/style.scss">
+    <!-- <link rel="stylesheet" href="./scss/style.scss "> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.css">
 </head>
+
 <body>
     <div class="wrapper">
-
         <!-- background lines -->
         <div class="lines">
             <div class="line"></div>
@@ -21,29 +25,35 @@
             <div class="line last-line">4</div>
             <!-- <div class="line"></div> -->
         </div>
+
+
         <header class="row">
             <!-- Лого -->
             <div class="logo">
                 <h5 class="site-name">zainoo</h5>
                 <sup class="trademark">TM</sup>
             </div>
-            
+
             <!-- Иконки -->
             <div class="icons">
-                
+
                 <!-- Поисковая строка -->
                 <div class="input-box">
-                    <input type="search" class="input-search">
+                    <input placeholder="Search" type="search" class="input-search hidden" id="search">
+                    <div class="input-line"></div>
                 </div>
-
-                <div class="search icon">
-                    <a href=""><i class="fas fa-search"></i></a>
-                </div>
-                <div class="cart icon">
-                    <a href=""><i class="fas fa-shopping-cart"></i></a>
-                </div>
-                <div class="profile icon">
-                    <a href=""><i class="far fa-user"></i></a>
+                <div class="icons-box">
+                    <div class="search icon">
+                        <label for="search">
+                            <a href="#"><i class="fas fa-search"></i></a>
+                        </label>
+                    </div>
+                    <div class="cart-icon icon">
+                        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <div class="profile icon">
+                        <a href="#"><i class="far fa-user"></i></a>
+                    </div>
                 </div>
             </div>
         </header>
@@ -83,20 +93,50 @@
                     <div class="info-text">
                         <p>The best looks; Top Comfort</p>
                         <h1 class="comfy-maxer">Comfy Maxer<sup class="registered">®</sup></h1>
-                        <p>Our shoes fuse together an insole that cushions every move, laces that you’ll never need to tie again, and an odor-fighting copper thread lining.</p>
+                        <p>Our shoes fuse together an insole that cushions every move, laces that you’ll never need to
+                            tie again, and an odor-fighting copper thread lining.</p>
                     </div>
                     <div class="info-links">
                         <div class="cartlink">
-                            <a class="cart-link button" href="">
+                            <button data-price="300" data-title="Comfy Maxer"
+                                data-image="./img/output-onlinepngtools (1).png" data-active="false"
+                                class="cart-link button" href="#">
                                 <i class="fas fa-shopping-bag"></i>
-                                Add To Cart
-                            </a>
+                                <span class="cart-butt-text">Add To Cart</span>
+                            </button>
                         </div>
                         <div class="watch-intro">
-                            <a href="" class="intro-link button">
+                            <button href="" data-price="3000000" data-title="Kawunchik"
+                            data-image="./img/index.jpeg" data-active="false"
+                            class="intro-link button">
                                 <i class="far fa-play-circle"></i>
-                                Watch Intro
-                            </a>
+                                <span class="cart-butt-text">Watch Intro</span>
+                            </button>
+                        </div>
+                        <div class="cartlink">
+                            <button data-price="1" 
+                                data-title="Rope (BDSM product)"
+                                data-image="./img/verevka.jpeg" data-active="false"
+                                class="cart-link button" href="#">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="cart-butt-text">Add To Cart</span>
+                            </button>
+                        </div>
+                        <div class="cartlink">
+                            <button data-price="3600" data-title="Видеокарта GeForce RTX 3080"
+                                data-image="./img/images.jpeg" data-active="false"
+                                class="cart-link button" href="#">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="cart-butt-text">Add To Cart</span>
+                            </button>
+                        </div>
+                        <div class="cartlink">
+                            <button data-price="1000" data-title="Heating Battery Sovetskaya"
+                                data-image="./img/index1.jpeg" data-active="false"
+                                class="cart-link button" href="#">
+                                <i class="fas fa-shopping-bag"></i>
+                                <span class="cart-butt-text">Add To Cart</span>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -121,9 +161,18 @@
             </div>
         </main>
     </div>
-    
-    
+
+
+    <!-- cart -->
+    <div id="cart" class="cart">
+        <h1 class='total-price'>Total price: $<span class="total-price-value">0</span></h1>
+        <a href="#" class="cart-close-button">Close cart</a>
+    </div>
+
     <script src="js/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/input.js"></script>
+    <script src="js/scrollTop.js"></script>
 </body>
+
 </html>

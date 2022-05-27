@@ -1,0 +1,376 @@
+@import url("./colors.css");
+
+body {
+    font-family: "Sofia Pro";
+}
+
+.wrapper {
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 15px 20px;
+    position: relative;
+    max-width: 1200px;
+}
+
+.lines {
+    border-right: 1px solid #E9E9E9;
+    color: #FBF4E5;
+    display: flex;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+}
+
+.line {
+    border-right: 1px solid #E9E9E9;
+    color: #FBF4E5;
+}
+
+.lines .line {
+    font-size: 30em;
+    margin-top: -100px;
+    width: 21%;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    display: flex;
+    font-family: 'Circular Std';
+}
+
+.site-name {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.trademark {
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    justify-content: space-around;
+}
+
+.icons a {
+    color: black;
+}
+
+.icon {
+    margin: 0 10px;
+}
+
+.icon:last-child {
+    margin-right: 0;
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+ul {
+    padding: 0;
+}
+
+.products {
+    font-family: 'Sofia Pro ExtraLight';
+    font-size: 22px;
+    font-weight: 400;
+    list-style-type: none;
+    margin: 45px 0;
+    padding: 0;
+}
+
+.types-of-products .products:nth-child(3) {
+    display: flex;
+    align-items: center;
+}
+
+.new {
+    border-radius: 10px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
+    font-size: 12px;
+    margin-left: 10px;
+    margin-bottom: -3px;
+    padding: 3px 5px;
+    text-decoration: none;
+}
+
+.types {
+    color: grey;
+    text-decoration: none;
+}
+
+.something {
+    display: flex;
+    margin-bottom: 30px;
+}
+
+.extra-care {
+    color: white;
+    background-color: black;
+}
+
+.sofiapro {
+    font-size: 44px;
+    font-weight: 400;
+    margin: 0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.learn-more {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 100px;
+}
+
+.learn-more .line {
+    border-bottom: 1px solid black;
+    height: 1px;
+    width: 60px;
+}
+
+.scroll-down a {
+    color: black;
+    text-decoration: none;
+}
+
+.main {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.info p {
+    color: grey;
+    margin: 2% 0;
+}
+
+.info-text {
+    margin-bottom: 5%;
+}
+
+.info-text p {
+    font-family: 'Sofia Pro Light';
+}
+
+.info-links {
+    display: flex;
+}
+
+.comfy-maxer {
+    font-family: 'Sofia Pro Ultralight';
+    font-size: 3em;
+    font-weight: 300;
+}
+
+.registered {
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.cartlink {
+    margin-right: 8px;
+}
+
+.cart-link {
+    color: white;
+    background-color: black;
+}
+
+.button {
+    border-radius: 7px;
+    border: 1px solid black;
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0;
+    /* padding: 20px 30px; */
+    width: 150px;
+    height: 55px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button i {
+    margin-right: 8px;
+}
+
+.intro-link {
+    color: black;
+    background-color: white;
+}
+
+.sneakers-img {
+    margin: 0;
+    padding: 0;
+    max-width: 100%;
+}
+
+.slides p {
+    text-align: center;
+}
+
+.vertical {
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Circular Std';
+    font-size: 14px;
+    writing-mode: vertical-lr;
+}
+
+.vertical-menu {
+    display: flex;
+    align-items: flex-end;
+    list-style-type: none;
+    margin: 0;
+    transform: rotate(180deg);
+}
+
+.vertical-menu li {
+    margin: 10px 0;
+}
+
+/* search */
+
+/* .input-box {
+    display: none;
+} */
+
+.input-search {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--grey);
+    color: #696969;
+    z-index: -100;
+    margin-top: -10px;
+    width: 100%;
+    height: 25px;
+    transition: all 0.3s;
+}
+
+.input-search:focus {
+    outline: none;
+}
+
+.input-search::placeholder {
+    color: #696969;
+    -moz-color: #696969;
+}
+
+.input-line {
+    height: 2px;
+    width: 0;
+    background-color: #2079DF;
+    margin-top: -1px;
+    transition: 0.4s;
+    z-index: 2;
+    position: relative;
+}
+
+.input-search:focus + .input-line {
+    width: 100%;
+}
+
+.hidden {
+    opacity: 0;
+    /* display: none; */
+    width: 0;
+    height: 0;
+}
+
+.icons-box {
+    display: flex;
+}
+
+
+
+/* cart */
+
+.cart {
+    /* display: flex; */
+    padding: 50px;
+    border: 1px solid #000;
+    width: 60%;
+    border-radius: 30px;
+}
+
+.cart-body {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+.cart-info {
+    width: 50%;
+}
+
+.cart-product {
+    width: 40%;
+}
+
+.cart-img {
+    max-width: 100%;
+}
+
+.button-active {
+    background-color: #4E504F;
+}
+
+.cart-math {
+    display: flex;
+    align-items: center;
+}
+
+.cart-math > * {
+    margin: 0 10px 10px 0;
+}
+
+.plus-button, .minus-button, .cart-cross {
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    background-color: #000;
+}
+
+.total-price {
+    font-family: 'Sofia Pro Ultralight';
+    font-weight: 800;
+    font-size: 30px;
+    text-align: right;
+}
+
+.cart-close-button {
+    text-decoration: none;
+    font-weight: bold;
+    color: #000;
+    /* display: block;
+    text-align: right; */
+}

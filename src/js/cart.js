@@ -58,7 +58,7 @@ function createHTML(productImg, productTitle, productPrice, productCount, produc
             <button class="plus-button" onclick="add('${productTitle}', ${productId})">+</button>
           </span>
           <div data-id="${productId}" class="cart-count">${productCount}</div>
-          <span class="cart-minus">
+          <span class="cart-minus" onclick="deduct('${productTitle}', ${productId})">
             <button class="minus-button">-</button>
           </span>
         </div>
@@ -68,7 +68,7 @@ function createHTML(productImg, productTitle, productPrice, productCount, produc
     <div>
       <button class="cart-cross">X</button>
     </div>
-  </div>`
+  </div>`;
   
   cart.insertAdjacentHTML('afterbegin', cartHtml)
   totalValue.innerHTML = sum
@@ -84,9 +84,10 @@ function createHTML(productImg, productTitle, productPrice, productCount, produc
 
 }
 
+// плюсик
 function add(productTitle, productId) {
   let span = document.querySelector(`.cart-count[data-id="${productId}"]`);
-
+  
   products.forEach(function (product) {
     if (productTitle == product.title) {
       product.count++ 
@@ -95,21 +96,18 @@ function add(productTitle, productId) {
   })
 }
 
-function deduct(productCount, productPrice) {
-  minus.onclick = function () {
-    if (productCount > 1) {
-      productCount--
-      console.log(productCount);
-      document.querySelector('.cart-count').innerHTML = productCount
-  
-      sum = sum -= parseInt(productPrice)
-      totalValue.innerHTML = sum
-      return;
-    }
-    // else {
-    //   del(cross, button)
-    // }
-  }
+// минусик
+function deduct(productTitle, productId) {
+	let span = document.querySelector(`.cart-count[data-id="${productId}"]`);
+
+	products.forEach(function (product) {
+    if (productTitle == product.title) {
+      if (product.count > 1) { 
+        product.count--;
+        span.innerHTML = product.count;
+      }
+		}
+	});
 }
 
 function del(button) {

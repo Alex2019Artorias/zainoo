@@ -84,20 +84,12 @@ function createHTML(productImg, productTitle, productPrice, productCount, produc
 
 }
 
-function add(productTitle) {
-  // productCount++
-  // console.log(productCount);
-  // document.querySelector('.cart-count').innerHTML =productCount
-    
-  // sum = sum += parseInt(productPrice)
-  // totalValue.innerHTML = sum
-  // return
+function add(productTitle, productId) {
+  let span = document.querySelector(`.cart-count[data-id="${productId}"]`);
 
-  products.forEach(function (product, productId) {
-    let span = document.querySelector(`.cart-count[data-id="${productId}"]`)
+  products.forEach(function (product) {
     if (productTitle == product.title) {
       product.count++ 
-      console.log(product);
       span.innerHTML = product.count
     }
   })
@@ -142,7 +134,6 @@ function setUniqueProductID() {
 function getRandomNumber(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
-
 
 
 buttons.forEach((button) => {

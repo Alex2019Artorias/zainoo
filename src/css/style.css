@@ -303,6 +303,8 @@ h1 {
     /* display: none; */
     width: 0;
     height: 0;
+    padding: 0;
+    margin: 0;
 }
 
 .icons-box {
@@ -319,6 +321,7 @@ h1 {
     border: 1px solid #000;
     width: 60%;
     border-radius: 30px;
+    display: none;
 }
 
 .cart-body {
@@ -358,6 +361,7 @@ h1 {
     height: 30px;
     border-radius: 8px;
     background-color: #000;
+    cursor: pointer;
 }
 
 .total-price {

@@ -2,9 +2,10 @@
 let cart = document.querySelector("#cart");
 let buttons = document.querySelectorAll(".button");
 let totalValue = document.querySelector('.total-price-value');
+let cartIcon = document.querySelector('.cart-icon');
+let closeBtn = document.querySelector('.cart-close-button');
 
 let products = [];
-let sum = 0
 
 function isBtnBlocked(button) {
   if (button.dataset.active == "false") {
@@ -25,18 +26,21 @@ function createObj(button) {
   let productCount = 1;
   let productTitle = button.dataset.title;
   let productObject = {};
-  
+
 
   // картинка НУЖНА???
   productObject['title'] = productTitle;
   productObject['price'] = productPrice;
   productObject['count'] = productCount;
   productObject.id = setUniqueProductID()
+  button.dataset.productId = productObject.id;
+
   products.push(productObject);
   console.log(productObject);
   console.log(products);
 
-  sum += productCount * parseInt(productPrice)
+  // sum += productCount * parseInt(productPrice)
+  calculateTotalPrice()
 
   createHTML(productImg, productTitle, productPrice, productCount, productObject.id)
 
@@ -45,7 +49,7 @@ function createObj(button) {
 
 function createHTML(productImg, productTitle, productPrice, productCount, productId) {
   let cartHtml = `
-  <div class="cart-body">
+  <div data-id="${productId}" class="cart-body">
     <figure class="cart-product">
       <img class="cart-img" src="${productImg}" alt="">
     </figure>
@@ -66,71 +70,81 @@ function createHTML(productImg, productTitle, productPrice, productCount, produc
       <div class="cart-price">$${productPrice}</div>
     </section>
     <div>
-      <button class="cart-cross">X</button>
+      <button data-id="${productId}" class="cart-cross" onclick="del(${productId})">X</button>
     </div>
   </div>`;
-  
+
   cart.insertAdjacentHTML('afterbegin', cartHtml)
-  totalValue.innerHTML = sum
-  
-  // let plus = cartHtml.querySelector('.plus-button')
-  // let minus = cartHtml.querySelector('.minus-button')
-  // let cross = cartHtml.querySelector('.cart-cross')
-
-  // plus.onclick = add(productCount, productPrice)
-  // minus.onclick = deduct(productCount, productPrice)
-
-  // cross.onclick = del(button)
-
 }
 
 // плюсик
 function add(productTitle, productId) {
   let span = document.querySelector(`.cart-count[data-id="${productId}"]`);
-  
+
   products.forEach(function (product) {
     if (productTitle == product.title) {
-      product.count++ 
+      product.count++
       span.innerHTML = product.count
     }
   })
+  calculateTotalPrice()
 }
 
 // минусик
 function deduct(productTitle, productId) {
-	let span = document.querySelector(`.cart-count[data-id="${productId}"]`);
+  let span = document.querySelector(`.cart-count[data-id="${productId}"]`);
 
-	products.forEach(function (product) {
+  products.forEach(function (product) {
     if (productTitle == product.title) {
-      if (product.count > 1) { 
+      if (product.count > 0) {
         product.count--;
         span.innerHTML = product.count;
       }
-		}
-	});
+    }
+  });
+
+  calculateTotalPrice()
 }
 
-function del(button) {
-  cross.onclick = () => {
-    // удаляем html
-    document.querySelector('.cart-body').remove()
-    // удаляем из массива
-    let index = products.indexOf('productsArr')
-    products.splice(index, 1)
-    
-    button.dataset.active = "false"    
+function del(productId) {
+  let productBody = document.querySelector(`.cart-body[data-id="${productId}"]`)
+  productBody.remove();
 
-    console.log(products);
-  }
+  products.forEach(function (product) {
+    if (productId == product.id) {
+      let index = products.indexOf(product)
+      products.splice(index, 1)
+    }
+  })
+  
+  lastProduct();
+
+  calculateTotalPrice()
+  // console.log(button);
+
+  let blockedProductButton = document.querySelector(
+    `.button[data-product-id="${productId}"`
+  );
+  console.log(blockedProductButton);
+
+  enableProductButton(blockedProductButton);
+
+  // updateCart();
+}
+
+function enableProductButton(button) {
+  button.dataset.active = false;
+  button.classList.remove("button-active");
+  button.querySelector("span").innerHTML = "Add to cart";
 }
 
 function setUniqueProductID() {
-	let productID = getRandomNumber(1, 10000);
-	return productID;
+  let productID = getRandomNumber(1, 10000);
+  return productID;
 }
 
 function getRandomNumber(min, max) {
-	return Math.floor(Math.random() * (max - min)) + min;
+  return Math.floor(Math.random() * (max - min)) + min;
 }
 
 
@@ -138,17 +152,37 @@ buttons.forEach((button) => {
   // меняем кнопку
   button.addEventListener('click', () => {
     isBtnBlocked(button);
+    showCart()
   })
-  
-  // let btn = button
 });
+
+cartIcon.onclick = showCart
+
+closeBtn.onclick = hideCart
+
+function calculateTotalPrice() {
+  let totalPrice = 0;
+
+  for (let product in products) {
+    totalPrice += products[product].price * products[product].count;
+  }
+
+  totalValue.innerHTML = totalPrice.toFixed(2);
+}
+
+function hideCart() {
+  cart.style.display = 'none'
+}
+
+function showCart() {
+  cart.style.display = 'block'
+}
+
+function lastProduct() {
+  if (products.length == 0) {
+    hideCart()
+  }
+}
 
 // экспирементс
 
-
-// var myArray = ['one', 'two', 'three'];
-// var myIndex = myArray.indexOf('two');
-// if (myIndex !== -1) {
-//     myArray.splice(myIndex, 1);
-// }
-// console.log(myArray)
